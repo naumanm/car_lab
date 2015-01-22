@@ -12,14 +12,14 @@ function Car(make, model, year, state, color, current_owner){
 }
 
 Car.prototype.pick_up = function(name) {
-	if (this.state == "on"){
+	if (this.state === "on"){
 		this.passengers.push(name);
 	}
 };
 
 Car.prototype.dropOff =function(name){
-	if (this.state == "on"){
-		this.passengers.splice(name);
+	if (this.state === "on"){
+		this.passengers.splice(this.passengers.indexOf(name), 1);
 	}
 	else{
 		return("Are you crazy? You can only throw " + name + "out while the car is on. That's how the test was written.");
