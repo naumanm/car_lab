@@ -13,8 +13,9 @@ function Car(make, model, year, state, color, current_owner, passengers){
 Car.prototype.previous_owners = [];
 
 Car.prototype.sale = function(newOwner){
-	this.previous_owner.push(newOwner);
-	this.newOwner = newOwner;
+	this.current_owner = newOwner;
+
+
 };
 
 Car.prototype.paint = function(newColor){
@@ -25,12 +26,21 @@ Car.prototype.start = function() {
 	this.state("on");
 };
 
-
-
 Car.prototype.off = function () {
 	this.state("off");
 };
 
+Car.prototype.driveTo = function (destination) {
+	if (this.state === "on") {
+		console.log("driving to " + destination);
+	}
+};
 
+Car.prototype.park = function () {
+	if (this.state === "off") {
+		console.log("parked!");
+	}
+};
 
+// don't touch this
 module.exports=Car;
