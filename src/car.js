@@ -1,11 +1,11 @@
 // mikeNauman
 
-function Car(make, model, year, state, color, current_owner){
+function Car(make, model, year, color){
 	this.make = make;
 	this.model = model;
 	this.year = year;
-	this.state= "off";
 	this.color = color;
+	this.state= "off";
 	this.current_owner = "Manufacturer";
 	this.passengers = [];
 	this.previous_owners = [];
