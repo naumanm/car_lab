@@ -14,16 +14,22 @@ Car.prototype.previousOwners = [];
 Car.prototype.passengers = [];
 
 Car.prototype.pick_up = function(name) {
-	if (this.state === "on") {
-		//console.log("driving to 'pick up '<" + name + ">'");
-		this.passengers.push(name);	
+	if (this.state == "on"){
+		this.passengers.push(name);
+	}
+};
+
+Car.prototype.dropOff =function(name){
+	if (this.state == "on"){
+		this.passengers.splice(name);
+	}
+	else{
+		return("Are you crazy? You can only throw " + name + "out while the car is on. That's how the test was written.");
 	}
 };
 
 Car.prototype.sale = function(newOwner){
-	// not working not sure why, uncomment and the line
-	// below will fail
-	//this.previous_owners.push(current_owner);
+	this.previous_owners.push(this.current_owner);
 	this.current_owner = newOwner;
 };
 
