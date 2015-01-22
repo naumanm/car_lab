@@ -1,16 +1,24 @@
 // mikeNauman
 
-function Car(make, model, year, state, color, current_owner, passengers){
+function Car(make, model, year, state, color, current_owner){
 	this.make = make;
 	this.model = model;
 	this.year = year;
 	this.state= "off";
 	this.color = color;
 	this.current_owner = "Manufacturer";
-	this.passengers = passengers;
 }
 
-Car.prototype.previous_owners = [];
+Car.prototype.previousOwners = [];
+
+Car.prototype.passengers = [];
+
+Car.prototype.pick_up = function(name) {
+	if (this.state === "on") {
+		//console.log("driving to 'pick up '<" + name + ">'");
+		this.passengers.push(name);	
+	}
+};
 
 Car.prototype.sale = function(newOwner){
 	// not working not sure why, uncomment and the line
