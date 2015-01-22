@@ -13,9 +13,10 @@ function Car(make, model, year, state, color, current_owner, passengers){
 Car.prototype.previous_owners = [];
 
 Car.prototype.sale = function(newOwner){
+	// not working not sure why, uncomment and the line
+	// below will fail
+	//this.previous_owners.push(current_owner);
 	this.current_owner = newOwner;
-
-
 };
 
 Car.prototype.paint = function(newColor){
@@ -23,11 +24,11 @@ Car.prototype.paint = function(newColor){
 };
 
 Car.prototype.start = function() {
-	this.state("on");
+	this.state = "on";
 };
 
 Car.prototype.off = function () {
-	this.state("off");
+	this.state = "off";
 };
 
 Car.prototype.driveTo = function (destination) {
