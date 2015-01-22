@@ -7,11 +7,9 @@ function Car(make, model, year, state, color, current_owner){
 	this.state= "off";
 	this.color = color;
 	this.current_owner = "Manufacturer";
+	this.passengers = [];
+	this.previous_owners = [];
 }
-
-Car.prototype.previousOwners = [];
-
-Car.prototype.passengers = [];
 
 Car.prototype.pick_up = function(name) {
 	if (this.state == "on"){
